@@ -40,6 +40,16 @@ let UserEdit = () => {
   )
 }
 
+let Error404 = () => {
+  return (
+    <>
+      <h1>Esta pagina no existe</h1>
+      <h3>Error404</h3>
+      <Link to='/'>Ir al home</Link>
+    </>
+  )
+}
+
 function App() {
   const isAuth = false;
   return (
@@ -55,6 +65,8 @@ function App() {
         </Route>
 
         <Route path='/person' element={<NotImplemented/>} />
+
+        <Route path='*' element={<Error404/>} />
 
       </Routes>
     </BrowserRouter>
