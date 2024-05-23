@@ -1,24 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+let Hello = () => {
+  return <h1>Hola estudiantes</h1>
+}
+
+let NotImplemented = () => {
+  return (
+    <div>
+      <h1>Esta pagina aun no esta lista</h1>
+    </div>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Hello/>} />
+
+      
+        <Route path='/user' element={<NotImplemented/>} />
+        <Route path='/user/add' element={<NotImplemented/>} />
+        <Route path='/user/edit/:id' element={<NotImplemented/>} />
+        <Route path='/user/delete/:id' element={<NotImplemented/>} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
