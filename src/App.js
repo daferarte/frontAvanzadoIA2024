@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route, Link, Outlet, redirect, useNavigate, Navigate, useParams } from 'react-router-dom';
+import SignIn from './users/SingIn';
 
 let Hello = () => {
   return <h1>Hola estudiantes</h1>
@@ -57,7 +58,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Hello/>} />
 
-      
+        <Route path='login' element={<SignIn/>} />
+
         <Route path='/user' element={<UsersOutlet/>}>
           <Route path='add' element={ isAuth ? <Navigate to={'/'}/>:<NotImplemented/>} />
           <Route path='edit/:id' element={<UserEdit/>} />
